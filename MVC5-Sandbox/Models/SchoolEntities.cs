@@ -6,6 +6,11 @@ namespace MVC5_Sandbox.Models
 {
     using System.Data.Entity;
 
+    /// <summary>
+    /// Experimenting with Entity Framework, Fluid API, and code first migrations.
+    /// 
+    /// Using https://msdn.microsoft.com/en-us/data/jj591620 as source material
+    /// </summary>
     public class SchoolEntities : DbContext
     {
         public SchoolEntities()
