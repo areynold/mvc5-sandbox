@@ -18,5 +18,6 @@ namespace MVC5_Sandbox.Models
 
         // Navigation Properties
         public virtual ICollection<Course> Courses { get; private set; }
+        public OfficeAssignment OfficeAssignment { get; set; }
     }
 }

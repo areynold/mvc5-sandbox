@@ -21,10 +21,7 @@ namespace MVC5_Sandbox.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingEntitySetNameConvention>();
-
-            // Set a primary key on OfficeAssignment
-            modelBuilder.Entity<OfficeAssignment>().HasKey(t => t.InstructorId);
-
+            
             // Set a composite primary key on Department
             modelBuilder.Entity<Department>().HasKey(t => new { t.DepartmentId, t.Name });
 
@@ -41,6 +38,16 @@ namespace MVC5_Sandbox.Models
 
             // Map property to differently named db column
             modelBuilder.Entity<Department>().Property(t => t.Name).HasColumnName("DepartmentName");
+
+            //// Required-to-Optional Relationship (one-to-zero-or-one)
+            // Set primary key on OfficeAssignment
+            modelBuilder.Entity<OfficeAssignment>()
+                .HasKey(t => t.InstructorId);
+
+            // Set one-to-zero-or-one relationship
+            modelBuilder.Entity<OfficeAssignment>()
+                .HasRequired(t => t.Instructor)
+                .WithOptional(t => t.OfficeAssignment);
         }
     }
 }
