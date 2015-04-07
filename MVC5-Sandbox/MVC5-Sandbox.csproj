@@ -102,6 +102,14 @@
     <Compile Include="Migrations\201504072012413_ChangeColumnName.Designer.cs">
       <DependentUpon>201504072012413_ChangeColumnName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504072024156_1to1OfficeAssignment.cs" />
+    <Compile Include="Migrations\201504072024156_1to1OfficeAssignment.Designer.cs">
+      <DependentUpon>201504072024156_1to1OfficeAssignment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504072029387_AddCourseInstructorTable.cs" />
+    <Compile Include="Migrations\201504072029387_AddCourseInstructorTable.Designer.cs">
+      <DependentUpon>201504072029387_AddCourseInstructorTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Department.cs" />
@@ -128,6 +136,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201504072012413_ChangeColumnName.resx">
       <DependentUpon>201504072012413_ChangeColumnName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504072024156_1to1OfficeAssignment.resx">
+      <DependentUpon>201504072024156_1to1OfficeAssignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504072029387_AddCourseInstructorTable.resx">
+      <DependentUpon>201504072029387_AddCourseInstructorTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

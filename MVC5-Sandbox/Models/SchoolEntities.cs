@@ -55,6 +55,19 @@ namespace MVC5_Sandbox.Models
             modelBuilder.Entity<Instructor>()
                 .HasRequired(t => t.OfficeAssignment)
                 .WithRequiredPrincipal(t => t.Instructor);
+
+            //// Set many-to-many relationship
+            modelBuilder.Entity<Course>()
+                .HasMany(t => t.Instructors)
+                .WithMany(t => t.Courses)
+                
+                // Join tables/columns
+                .Map(m =>
+                {
+                    m.ToTable("CourseInstructor");
+                    m.MapLeftKey("CourseId");
+                    m.MapRightKey("InstructorId");
+                });
         }
     }
 }
