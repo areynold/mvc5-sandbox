@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace MVC5_Sandbox.Models
@@ -25,6 +26,11 @@ namespace MVC5_Sandbox.Models
 
             // Set a composite primary key on Department
             modelBuilder.Entity<Department>().HasKey(t => new { t.DepartmentId, t.Name });
+
+            // Do not generate Department's DepartmentId from the database
+            modelBuilder.Entity<Department>()
+                .Property(t => t.DepartmentId)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
         }
     }
 }
