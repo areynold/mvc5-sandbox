@@ -100,6 +100,7 @@
     </Compile>
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Details.cs" />
     <Compile Include="Models\SchoolEntities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
