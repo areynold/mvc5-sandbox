@@ -38,6 +38,9 @@ namespace MVC5_Sandbox.Models
 
             // Do not map property to DB
             modelBuilder.Entity<Department>().Ignore(t => t.Budget);
+
+            // Map property to differently named db column
+            modelBuilder.Entity<Department>().Property(t => t.Name).HasColumnName("DepartmentName");
         }
     }
 }
