@@ -31,6 +31,10 @@ namespace MVC5_Sandbox.Models
             modelBuilder.Entity<Department>()
                 .Property(t => t.DepartmentId)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
+
+            // Set property max length
+            modelBuilder.Entity<Department>().Property(t => t.Name).HasMaxLength(50);
+
         }
     }
 }
