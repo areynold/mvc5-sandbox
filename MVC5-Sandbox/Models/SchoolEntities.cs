@@ -19,6 +19,12 @@ namespace MVC5_Sandbox.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingEntitySetNameConvention>();
+
+            // Set a primary key on OfficeAssignment
+            modelBuilder.Entity<OfficeAssignment>().HasKey(t => t.InstructorId);
+
+            // Set a composite primary key on Department
+            modelBuilder.Entity<Department>().HasKey(t => new { t.DepartmentId, t.Name });
         }
     }
 }
