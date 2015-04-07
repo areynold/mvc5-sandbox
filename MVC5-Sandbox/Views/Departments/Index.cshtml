@@ -1,4 +1,5 @@
-﻿@model IEnumerable<MVC5_Sandbox.Models.Department>
+﻿@using MVC5_Sandbox.Models
+@model IEnumerable<MVC5_Sandbox.Models.Department>
 
 @{
     ViewBag.Title = "Index";
@@ -17,23 +18,46 @@
         <th>
             @Html.DisplayNameFor(model => model.Administrator)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Courses)
+        </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.StartDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Administrator)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        var context = new SchoolEntities();
+        var courses = context.Courses.Where(c => c.DepartmentId == item.DepartmentId);
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Administrator)
+            </td>
+            <td>
+                @if (courses.Any())
+                {
+                    <ul>
+                        @foreach (var c in courses)
+                        {
+                            <li>c.Name</li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p>No courses this semester</p>
+                }
+
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {/* id=item.PrimaryKey */}) |
+                @Html.ActionLink("Details", "Details", new {/* id=item.PrimaryKey */}) |
+                @Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})
+            </td>
+        </tr>
+    }
 
 </table>
