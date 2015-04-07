@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.Infrastructure.Annotations;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace MVC5_Sandbox.Models
@@ -35,6 +36,8 @@ namespace MVC5_Sandbox.Models
             // Set property max length
             modelBuilder.Entity<Department>().Property(t => t.Name).HasMaxLength(50);
 
+            // Do not map property to DB
+            modelBuilder.Entity<Department>().Ignore(t => t.Budget);
         }
     }
 }
