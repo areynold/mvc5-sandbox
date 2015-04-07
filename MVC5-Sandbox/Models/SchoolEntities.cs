@@ -44,10 +44,17 @@ namespace MVC5_Sandbox.Models
             modelBuilder.Entity<OfficeAssignment>()
                 .HasKey(t => t.InstructorId);
 
-            // Set one-to-zero-or-one relationship
-            modelBuilder.Entity<OfficeAssignment>()
-                .HasRequired(t => t.Instructor)
-                .WithOptional(t => t.OfficeAssignment);
+            //// Set one-to-zero-or-one relationship
+            //// Incompatible with one-to-one, below
+            //modelBuilder.Entity<OfficeAssignment>()
+            //    .HasRequired(t => t.Instructor)
+            //    .WithOptional(t => t.OfficeAssignment);
+
+            //// Set one-to-one relationship
+            // Set Office Assignment primary key (completed above)
+            modelBuilder.Entity<Instructor>()
+                .HasRequired(t => t.OfficeAssignment)
+                .WithRequiredPrincipal(t => t.Instructor);
         }
     }
 }
