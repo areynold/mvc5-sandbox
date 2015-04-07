@@ -9,7 +9,7 @@ namespace MVC5_Sandbox.Models
         /// </summary>
         public Course()
         {
-            this.Instructors = new HashSet<Instructors>();
+            this.Instructors = new HashSet<Instructor>();
         }
 
         // Primary key
