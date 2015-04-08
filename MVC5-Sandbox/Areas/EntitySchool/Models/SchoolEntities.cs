@@ -1,11 +1,9 @@
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.Infrastructure.Annotations;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace MVC5_Sandbox.Models
+namespace MVC5_Sandbox.Areas.EntitySchool.Models
 {
-    using System.Data.Entity;
-
     /// <summary>
     /// Experimenting with Entity Framework, Fluid API, and code first migrations.
     /// 

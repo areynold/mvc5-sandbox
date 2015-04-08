@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using MVC5_Sandbox.Models;
+using MVC5_Sandbox.Areas.EntitySchool.Models;
 
-namespace MVC5_Sandbox.Controllers
+namespace MVC5_Sandbox.Areas.EntitySchool.Controllers
 {
     public class DepartmentsController : Controller
     {

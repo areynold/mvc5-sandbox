@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-
-namespace MVC5_Sandbox.Models
+namespace MVC5_Sandbox.Areas.EntitySchool.Models
 {
     public class Department
     {

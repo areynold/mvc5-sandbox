@@ -1,3 +1,5 @@
+using MVC5_Sandbox.Areas.EntitySchool.Models;
+
 namespace MVC5_Sandbox.Migrations
 {
     using System;
@@ -5,14 +7,14 @@ namespace MVC5_Sandbox.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MVC5_Sandbox.Models.SchoolEntities>
+    internal sealed class Configuration : DbMigrationsConfiguration<SchoolEntities>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(MVC5_Sandbox.Models.SchoolEntities context)
+        protected override void Seed(SchoolEntities context)
         {
             //  This method will be called after migrating to the latest version.
 

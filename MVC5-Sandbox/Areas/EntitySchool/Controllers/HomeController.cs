@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace MVC5_Sandbox.Controllers
+namespace MVC5_Sandbox.Areas.EntitySchool.Controllers
 {
     public class HomeController : Controller
     {
