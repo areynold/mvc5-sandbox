@@ -17,7 +17,8 @@ namespace MVC5_Sandbox.Areas.EntitySchool
             context.MapRoute(
                 "EntitySchool_default",
                 "EntitySchool/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                new[] { "MVC5_Sandbox.Areas.EntitySchool.Controllers"}
             );
         }
     }
