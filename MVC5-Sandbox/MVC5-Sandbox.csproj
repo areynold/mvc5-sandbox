@@ -136,25 +136,25 @@
       <DependentUpon>201504072109320_Migration4.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Course.cs" />
-    <Compile Include="Models\Department.cs" />
-    <Compile Include="Models\Details.cs" />
-    <Compile Include="Models\Instructor.cs" />
-    <Compile Include="Models\OfficeAssignment.cs" />
-    <Compile Include="Models\SchoolEntities.cs" />
+    <Compile Include="Areas\EntitySchool\Models\Course.cs" />
+    <Compile Include="Areas\EntitySchool\Models\Department.cs" />
+    <Compile Include="Areas\EntitySchool\Models\Details.cs" />
+    <Compile Include="Areas\EntitySchool\Models\Instructor.cs" />
+    <Compile Include="Areas\EntitySchool\Models\OfficeAssignment.cs" />
+    <Compile Include="Areas\EntitySchool\Models\SchoolEntities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controllers\DepartmentsController.cs" />
+    <Compile Include="Areas\EntitySchool\Controllers\DepartmentsController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Departments\Create.cshtml" />
-    <Content Include="Views\Departments\Delete.cshtml" />
-    <Content Include="Views\Departments\Details.cshtml" />
-    <Content Include="Views\Departments\Edit.cshtml" />
-    <Content Include="Views\Departments\Index.cshtml" />
+    <Content Include="Areas\EntitySchool\Views\Departments\Create.cshtml" />
+    <Content Include="Areas\EntitySchool\Views\Departments\Delete.cshtml" />
+    <Content Include="Areas\EntitySchool\Views\Departments\Details.cshtml" />
+    <Content Include="Areas\EntitySchool\Views\Departments\Edit.cshtml" />
+    <Content Include="Areas\EntitySchool\Views\Departments\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
@@ -166,9 +166,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\EntitySchool\Controllers\" />
-    <Folder Include="Areas\EntitySchool\Models\" />
     <Folder Include="Areas\EntitySchool\Views\Shared\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201504072012413_ChangeColumnName.resx">
